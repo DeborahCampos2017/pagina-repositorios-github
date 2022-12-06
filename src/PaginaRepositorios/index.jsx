@@ -33,17 +33,6 @@ export default function PaginaRepositorios() {
       }
     );
 
-    api.get(`/${searchValue}/repos`).then(
-      (response) => {
-        console.log(response.data);
-        setRepo(response.data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }, [searchValue]);
-
   return (
     <Container>
       <HeaderSection>
@@ -71,9 +60,6 @@ export default function PaginaRepositorios() {
             <NumberContainer>
               <h1>{dados.public_repos}</h1>
               <h2>Repositórios</h2>
-              {repo.map((rep) => (
-                <li key={rep.id}>{repo.name}</li>
-              ))}
             </NumberContainer>
 
             <NumberContainer>
